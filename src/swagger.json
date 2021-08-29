@@ -1,0 +1,107 @@
+{
+  "openapi": "3.0.0",
+
+  "info": {
+    "title": "API do projetinho massa",
+    "description": "essa é a api massa do projetinho massa",
+    "version": "0.0.1"
+  },
+
+  "servers": [{
+    "url": "http://localhost:3333",
+    "description": "ambiente de desenvolvimento"
+  }],
+
+  "paths": {
+    "/register": {
+      "post": {
+        "summary": "Cadastro de candidato",
+        "description": "Rota de Cadastro de Usuário, recebe: Nome, Cargo, Data de Nascimento, Estado Cívil, CEP, ",
+        "tags": ["candidato"],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "birth": {
+                    "type": "string"
+                  },
+                  "profissao": {
+                    "type": "string"
+                  },
+                  "civil": {
+                    "type": "string"
+                  },
+                  "cep": {
+                    "type": "string"
+                  },
+                  "rua": {
+                    "type": "string"
+                  },
+                  "bairro": {
+                    "type": "string"
+                  },
+                  "cidade": {
+                    "type": "string"
+                  },
+                  "tel1": {
+                    "type": "string"
+                  },
+                  "tel2": {
+                    "type": "string"
+                  },
+                  "cel": {
+                    "type": "string"
+                  },
+                  "contato": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string"
+                  },
+                  "rg": {
+                    "type": "string"
+                  },
+                  "cpf": {
+                    "type": "string"
+                  },
+                  "veiculo": {
+                    "type": "string"
+                  },
+                  "habilitacao": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "Primeiro Exemplo": {
+                  "value": {
+                    "name": "Stephanie Sales",
+                    "profissao": "Desenvolvedora Full Stack",
+                    "birth": "00-00-0000",
+                    "civil": "Solteira",
+                    "cep": "00000-000",
+                    "rua": "Rua XXXXXXXX",
+                    "bairro": "Vila",
+                    "tel1": "(00) 0000-0000",
+                    "tel2": "(00) 0000-0000",
+                    "cel": "(00) 00000-0000",
+                    "contato": "Stephanie",
+                    "email": "stephanie.salles@000.com",
+                    "rg": "00.000.00-2",
+                    "cpf": "000.000.000-00",
+                    "veiculo": "Sim",
+                    "habilitacao": "Sim"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
