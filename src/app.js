@@ -9,13 +9,13 @@ const cors = require('cors');
 const connect = require('connect')
 const serveStatic = require('serve-static');
 connect().use(serveStatic);
+require("dotenv").config();
 
 
 mongoose.connect('mongodb+srv://stehsales:YCPP9SUScwiJ8FB@cluster0.jhatf.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
-
 
 app.get('/',  (req, res) => {
     res.sendFile(__dirname + "/index.html");
@@ -30,6 +30,6 @@ app.use(express.json());
 app.use(cors()); 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 app.use(routes);
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log(`Backend Started at http://localhost:${port}`);
 });
