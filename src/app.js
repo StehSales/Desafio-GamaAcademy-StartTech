@@ -30,6 +30,6 @@ app.use(express.json());
 app.use(cors()); 
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerDocs));
 app.use(routes);
-app.listen(process.env.PORT || port, () => {
+app.listen(port, () => {
     console.log(`Backend Started at http://localhost:${port}`);
 });
